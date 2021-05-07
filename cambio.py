@@ -5,16 +5,6 @@ from collections import Counter
 archivo=open("pedro.txt")
 linea=archivo.readline()
 abecedario=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-# dictProb={}
-# lisTaPro=[]
-# while linea !='':
-#     tem=linea.split(" ")
-#     dictProb.setdefault(float(tem[1].replace("\n","")),tem[0])
-#     lisTaPro.append(float(tem[1].replace("\n","")))
-#     linea=archivo.readline()
-
-# lisTaPro.sort(reverse=True)
-# print("===================")
 
 
 def contar_letras_repetidas(texto):    
@@ -76,7 +66,7 @@ def decode(texto):
     
     for i in texto:
         y=abecedario.index(i)
-        posicion=y-k
+        posicion=(y-k) % len(abecedario)
         salida+=abecedario[posicion]
 
     return salida
